@@ -32,20 +32,9 @@ class Browser:
                     line = Fore.BLUE + line
                 else:
                     line = line.text
-
                 if not line:
                     continue
-
-                # SOLUTION ERROR FROM TEST:
-                # In the console output the following text is not found:
-                # Python 3.10.7 documentation
-                # Make sure you extract all the text from the page.
-                # Also, make sure you don't highlight any parts of this text with blue,
-                # and don't put any escape sequences in it.
-                if line[:20] == '3.10.7 Documentation':
-                    page += 'Python 3.10.7 documentation' + '\n'
-                else:
-                    page += line + '\n'
+                page += line + '\n'
 
             with open(self.dir + '/' + short_url, 'w') as file:
                 file.write(page)
